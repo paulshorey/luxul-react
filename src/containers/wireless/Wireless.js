@@ -11,7 +11,7 @@ class Wireless extends React.Component {
         const { profiles, radios, dispatch } = this.props;
 
         return (
-            <div className="Wireless">
+            <div className="containerWireless">
                 <WirelessRadios
                     radios={radios}
                     handleRadioToggle={ (radio, enabled) => dispatch(setRadioEnabled(radio, enabled)) }

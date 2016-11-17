@@ -1,0 +1,50 @@
+.Wireless {
+
+    .componentWireless {
+        margin:1rem;
+        padding:1rem;
+        background:#fff;
+        h3 {
+            margin:0.25rem auto 0.5rem;
+            &::after {
+                content: ':';
+            }
+        }
+        > div {
+            margin: 0.125rem;
+        }
+    }
+
+    .componentWirelessRadios {
+    }
+
+    .componentWirelessProfilesEdit {
+
+        > * {
+            display:block;
+            margin:5px;
+        }
+
+        .WirelessRadios {
+            width: 300px;
+            border: 1px solid black;
+        }
+
+        .profileForm {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            text-align: left;
+            border: 1px solid black;
+        }
+
+        .profileTable {
+            border: 1px solid black;
+        }
+
+    }
+
+    .componentWirelessProfilesDisplay {
+    }
+
+}

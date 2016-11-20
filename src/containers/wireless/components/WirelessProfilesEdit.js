@@ -1,5 +1,6 @@
 import React from 'react';
 import {reduxForm, Field} from 'redux-form';
+
 import {TextField, SelectField, Toggle} from 'redux-form-material-ui';
 import MenuItem from 'material-ui/MenuItem';
 import RaisedButton from 'material-ui/RaisedButton';

@@ -9,6 +9,8 @@ module.exports = {
     require.resolve('babel-preset-es2015'),
     // exponentiation
     require.resolve('babel-preset-es2016'),
+    // exponentiation
+    require.resolve('babel-preset-es2017'),
     // JSX, Flow
     require.resolve('babel-preset-react')
   ],

@@ -1,7 +1,9 @@
 import React from 'react';
+
 import { Table, TableBody, TableHeader, TableRow, TableHeaderColumn, TableRowColumn} from 'material-ui/Table';
 import IconButton from 'material-ui/IconButton';
 import DeleteForever from 'material-ui/svg-icons/action/delete-forever';
+
 import tapOrClick from 'react-tap-or-click';
 
 export default class ProfileTable extends React.Component {

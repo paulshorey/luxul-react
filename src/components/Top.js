@@ -1,21 +1,22 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import Paper from 'material-ui/Paper';
 import AppBar from 'material-ui/AppBar';
 
 class Top extends React.Component {
-    render() {
-        console.warn('Top.js',this.props);
-        return (
-            <AppBar className="componentTop" title={this.props.title}></AppBar>
-        )
-    }
+	render() {
+		return (
+			<Paper zDepth={3} className="pageTop">
+				<AppBar title={this.props.title}></AppBar>
+			</Paper>
+		)
+	}
 };
 
-// data
 const mapStateToProps = (state) => {
-    return {
-        title: 'Title set in Top.js'
-    };
+	return {
+		title: 'Dashboard'
+	};
 };
 export default connect(mapStateToProps)(Top);

@@ -5,7 +5,7 @@ import Top from './../../components/Top';
 import Bottom from './../../components/Bottom';
 import TestContent from './components/TestContent';
 
-//import { setRadioEnabled, setRadioChannel, setRadioWidth, addProfile, deleteProfile } from '../../redux/test';
+//import { setRadioEnabled, setRadioChannel, setRadioWidth, addProfile, profileDelete } from '../../redux/test';
 //import './Wireless.scss';
 
 // layout

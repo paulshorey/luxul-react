@@ -1,18 +1,32 @@
 import React from 'react';
 
+import Paper from 'material-ui/Paper';
 import { Table, TableBody, TableHeader, TableRow, TableHeaderColumn, TableRowColumn} from 'material-ui/Table';
 import IconButton from 'material-ui/IconButton';
 import DeleteForever from 'material-ui/svg-icons/action/delete-forever';
-
-import tapOrClick from 'react-tap-or-click';
+import Dialog from 'material-ui/Dialog';
+import FlatButton from 'material-ui/FlatButton';
 
 export default class ProfileTable extends React.Component {
     render() {
-        const { profiles, handleDelete } = this.props;
+        const { profiles, handlers, profileDeleteConfirm } = this.props;
+        const DeleteDialogActions = [
+            <FlatButton
+                label="Cancel"
+                default={true}
+                onTouchTap={() => { handlers.profileDeleteCancel(profileDeleteConfirm); } }
+              />,
+              <FlatButton
+                label="Delete"
+                secondary={true}
+                keyboardFocused={true}
+                onTouchTap={() => { handlers.profileDelete(profileDeleteConfirm); } }
+              />
+        ];
 
         return (
-            <div className="componentWireless componentWirelessProfilesDisplay">
-            <h3>Your WiFi Profiles</h3>
+            <Paper zDepth={4} className="componentWireless componentWireless">
+                <h3>Your WiFi Profiles</h3>
 
                 <Table selectable={false}>
                     <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
@@ -41,7 +55,7 @@ export default class ProfileTable extends React.Component {
                                     <TableRowColumn>
                                         <IconButton
                                             tooltip="Delete"
-                                            {...tapOrClick(()=>{console.log('TEST');handleDelete(i);})}
+                                            onTouchTap={() => { handlers.profileDeleteConfirm(i); } }
                                         >
                                             <DeleteForever />
                                         </IconButton>
@@ -51,13 +65,18 @@ export default class ProfileTable extends React.Component {
                         })}
                     </TableBody>
                 </Table>
+                
+                <Dialog
+                    title="Delete Radio"
+                    actions={DeleteDialogActions}
+                    modal={false}
+                    open={ profileDeleteConfirm!==false }
+                    onRequestClose={this.s}
+                    >
+                    Are you sure you want to delete radio "{profileDeleteConfirm!==false ? profiles[profileDeleteConfirm].radio : ''}"?
+                </Dialog>
 
-            </div>
+            </Paper>
         )
     }
-}
-
-ProfileTable.propTypes = {
-    profiles: React.PropTypes.arrayOf(React.PropTypes.object),
-    handleDelete: React.PropTypes.func
 };

@@ -9,14 +9,28 @@ export const initialState = (function(){
 	let state = {
 		pages: new Map([
 			["/secondary/etc", {
-				secondaryNavPosition: '',
-				title: "Page On Secondary Navigation",
+				secondaryNavPosition: 0,
+				title: "First Page On Secondary NavBar",
 				icon: <FontIcon className="material-icons">wifi</FontIcon>
 			}], 
 			["/wifi", {
 				mainNavPosition: 1,
 				title: "Configure Your WiFi",
-				icon: <FontIcon className="material-icons">wifi</FontIcon>
+				icon: <FontIcon className="material-icons">wifi</FontIcon>,
+				pages: new Map([
+					["/wifi/one", {
+						title: "Woah, this is getting deep!",
+						icon: <FontIcon className="material-icons">one</FontIcon>
+					}], 
+					["/wifi/two", {
+						title: "Two",
+						icon: <FontIcon className="material-icons">two</FontIcon>
+					}],
+					["/wifi/three", {
+						title: "Three",
+						icon: <FontIcon className="material-icons">three</FontIcon>
+					}]
+				])
 			}], 
 			["/", {
 				mainNavPosition: 0,

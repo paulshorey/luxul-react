@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import AppTop from './../app/AppTop';
-import AppBottom from './../app/AppBottom';
+import AppTop from './../app/components/AppTop';
+import AppBottom from './../app/components/AppBottom';
 import TestContent from './components/TestContent';
 
 //import { setRadioEnabled, setRadioChannel, setRadioWidth, addProfile, profileDelete } from '../../redux/test';

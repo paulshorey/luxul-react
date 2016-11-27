@@ -12,7 +12,7 @@ class AppBottom extends React.Component {
 
 		// dependencies
 		const { dispatch } = this.props;
-		const actions = require('./actions');
+		const actions = require('./../actions');
 		const events = actions.events.call({});
 		const handlers = actions.handlers.call({ events, dispatch });
 

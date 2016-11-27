@@ -13,7 +13,8 @@ import { syncHistoryWithStore, routerReducer, routerMiddleware, push } from 'rea
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 // app
-import './containers/app/layout.scss';
+import './containers/app/css/uui.scss';
+import './containers/app/css/layout.scss';
 import appReducer from './containers/app/reducer';
 // wireless
 import Wireless from './containers/wireless/Wireless';

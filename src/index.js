@@ -48,6 +48,7 @@ ReactDOM.render(
         <Route path="/" component={Wireless} />
         <Route path="/wifi" component={Wireless} />
         <Route path="/test(/:uriText)" component={Test} />
+        <Route path="*" component={Test} />
       </Router>
     </MuiThemeProvider>
   </Provider>

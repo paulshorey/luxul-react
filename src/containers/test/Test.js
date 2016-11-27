@@ -17,7 +17,7 @@ class Test extends React.Component {
             <div className="containerWireless">
                 <AppTop />
                 <div className="wirelessSection section2">
-                	<TestContent params={this.props.params} data={this.props.data} />
+                	<TestContent params={this.props.params} data={this.props.data} location={this.props.location} />
                 </div>
                 <AppBottom />
             </div>
@@ -27,9 +27,9 @@ class Test extends React.Component {
 
 // data
 const mapStateToProps = (state) => {
+	console.log('test',state);
     return {
-        no: 'no?',
-        data: {text:'testtextdata'}
+        uri: {text:'testtextdata'}
     };
 };
 export default connect(mapStateToProps)(Test);

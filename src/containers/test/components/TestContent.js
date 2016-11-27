@@ -5,8 +5,8 @@ export default class extends React.Component {
         console.warn('TestText.js',this.props);
         return (
             <span className="componentTest componentTestText">
-                uri: {this.props.params.uriText},<br />
-                data: {this.props.data.text}
+                url: {this.props.params.splat},<br />
+                uri[0]: {this.props.params.uriText}
             </span>
         )
     }

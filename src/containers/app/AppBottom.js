@@ -28,7 +28,10 @@ class AppBottom extends React.Component {
 
 		// elements
 		var BottomNavigationItems = [];
-		this.props.app.pages.forEach(function(page, url) {
+		(new Map([...(this.props.app.pages).entries()].sort( (a,b) => { return a[1].mainNavPosition > b[1].mainNavPosition } ))).forEach(function(page, url) { // sort by main-nav position
+			if (isNaN(page.mainNavPosition)) { // ignore all pages not in main-nav
+				return;
+			}
 			BottomNavigationItems.push(
 				<BottomNavigationItem
 					key={url}

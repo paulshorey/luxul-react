@@ -1,35 +1,6 @@
 .containerWireless {
-    padding:61px 0;
-    
-
-    /*
-        page Layout
-    */
-    .pageTop {
-        position:fixed;
-        top:0;
-        left:0;
-        width:100%;
-        z-index:100;
-        // material-ui overrides 
-        button {
-            margin-top:4px !important;
-        }
-        h1 {
-            height:56px !important;
-            line-height:56px !important;
-            font-size:1.5rem !important;
-        }
-    }
-    .pageBottom {
-        position:fixed;
-        bottom:0;
-        left:0;
-        width:100%;
-        z-index:100;
-    }
-    .pageContent {        
-        .pageContentRow {
+        padding:61px 0; 
+        .wirelessSection {
             display:block;
             vertical-align:top;
             > * {
@@ -39,82 +10,81 @@
             }
             @media (min-width:700px) {
                display:flex;
-                &.pageCol1 {
+                &.section1 {
                     > * {
                         max-width:calc(100vw - 2rem);
                     }
                 }
-                &.pageCol2 {
+                &.section2 {
                     > * {
                         max-width:calc(50vw - 2rem);
                     }
                 }
             }
         }
-    }
 
 
-    /*
-        wireless Components
-    */
-    .componentWireless {
-        margin:1rem;
-        padding:1rem;
-        background:#fff;
-        
-        &[disabled] {
-            display:none;
-        }
+        /*
+            wireless Components
+        */
+        .componentWireless {
+            margin:1rem;
+            padding:1rem;
+            background:#fff;
+            
+            &[disabled] {
+                display:none;
+            }
 
-        h3 {
-            display:block;
-            margin:0.25rem auto 0.5rem;
-            &::after {
-                content: ':';
+            h3 {
+                display:block;
+                margin:0.25rem auto 0.5rem;
+                &::after {
+                    content: ':';
+                }
+            }
+            > div {
+                margin: 0.125rem;
             }
         }
-        > div {
-            margin: 0.125rem;
-        }
-    }
 
-    .componentWirelessRadios {
-        > div {
-            margin: 1rem 0 0;
-            padding: 1rem 0 0;
-            border-top: solid 2px rgb(0, 188, 212);
-            font-size: 1.25rem;
-            font-weight: bold;
+        .componentWirelessRadios {
+            > div {
+                margin: 1rem 0 0;
+                padding: 1rem 0 0;
+                border-top: solid 2px rgb(0, 188, 212);
+                font-size: 1.25rem;
+                font-weight: bold;
+            }
+            .mui-SelectField {
+                margin-top:-10px !important;
+            }
         }
-        .mui-SelectField {
-            margin-top:-10px !important;
-        }
-    }
 
-    .componentWirelessProfilesEdit {
-        form > div {
-            margin:0 0 10px;
+        .componentWirelessProfilesEdit {
+            form > div {
+                margin:0 0 10px;
+            }
+            .WirelessRadios {
+                width: 300px;
+                border: 1px solid black;
+            }
+            .profileForm {
+                display: flex;
+                flex-direction: column;
+                width: 300px;
+                text-align: left;
+                border: 1px solid black;
+            }
+            .profileTable {
+                border: 1px solid black;
+            }
+            .mui-RaisedButton {
+                margin-top:10px !important;
+            }
         }
-        .WirelessRadios {
-            width: 300px;
-            border: 1px solid black;
-        }
-        .profileForm {
-            display: flex;
-            flex-direction: column;
-            width: 300px;
-            text-align: left;
-            border: 1px solid black;
-        }
-        .profileTable {
-            border: 1px solid black;
-        }
-        .mui-RaisedButton {
-            margin-top:10px !important;
-        }
-    }
 
-    .componentWirelessProfilesDisplay {
-    }
+        .componentWirelessProfilesDisplay {
+        }
 
 }

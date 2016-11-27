@@ -1,8 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import Top from './../../components/Top';
-import Bottom from './../../components/Bottom';
+import AppTop from './../app/AppTop';
+import AppBottom from './../app/AppBottom';
+
 import WirelessRadios from './components/WirelessRadios';
 import WirelessProfilesEdit from './components/WirelessProfilesEdit';
 import WirelessProfilesDisplay from './components/WirelessProfilesDisplay';
@@ -17,28 +18,26 @@ class Wireless extends React.Component {
         const handlers = actions.handlers.call({ events, dispatch });
         return (
             <div className="containerWireless">
-                <Top />
-                <div className="pageContent">
-                    <div className="pageContentRow pageCol2">
-                        <WirelessRadios
-                            radios={radios}
-                            events={events}
-                            handlers={handlers}
-                        />
-                        <WirelessProfilesEdit
-                            radios={radios}
-                            onSubmit={ (profile) => dispatch(events.addProfile(profile)) }
-                        />
-                    </div>
-                    <WirelessProfilesDisplay
-                        className="pageContentRow pageCol1"
-                        profileDeleteConfirm={profileDeleteConfirm}
-                        profiles={profiles}
+                <AppTop />
+                <div className="wirelessSection section2">
+                    <WirelessRadios
+                        radios={radios}
                         events={events}
                         handlers={handlers}
                     />
+                    <WirelessProfilesEdit
+                        radios={radios}
+                        onSubmit={ (profile) => dispatch(events.addProfile(profile)) }
+                    />
                 </div>
-                <Bottom />
+                <WirelessProfilesDisplay
+                    className="wirelessSection section1"
+                    profileDeleteConfirm={profileDeleteConfirm}
+                    profiles={profiles}
+                    events={events}
+                    handlers={handlers}
+                />
+                <AppBottom />
             </div>
         )
     }

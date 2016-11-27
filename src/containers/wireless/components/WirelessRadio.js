@@ -12,8 +12,6 @@ export default class WirelessRadios extends React.Component {
             events,
             handlers
         } = this.props;
-        console.log('ghz',ghz);
-        console.log('radios',radios);
 
         return (
             <div>

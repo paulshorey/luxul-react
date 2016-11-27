@@ -89,7 +89,6 @@ export default function wirelessReducer(state = vars.initialState, action = {}) 
             }
         }
         default:
-            console.log('default state',state);
             return state;
     }
 }

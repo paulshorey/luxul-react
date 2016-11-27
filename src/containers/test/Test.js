@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import Top from './../../components/Top';
-import Bottom from './../../components/Bottom';
+import AppTop from './../app/AppTop';
+import AppBottom from './../app/AppBottom';
 import TestContent from './components/TestContent';
 
 //import { setRadioEnabled, setRadioChannel, setRadioWidth, addProfile, profileDelete } from '../../redux/test';
@@ -11,13 +11,15 @@ import TestContent from './components/TestContent';
 // layout
 class Test extends React.Component {
     render() {
-        console.error('Test.js',this.props);
+        console.log('Test.js',this.props);
 
         return (
-            <div className="containerTest">
-                <Top />
-                <TestContent params={this.props.params} data={this.props.data} />
-                <Bottom />
+            <div className="containerWireless">
+                <AppTop />
+                <div className="wirelessSection section2">
+                	<TestContent params={this.props.params} data={this.props.data} />
+                </div>
+                <AppBottom />
             </div>
         )
     }

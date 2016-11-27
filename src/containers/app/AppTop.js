@@ -4,11 +4,11 @@ import { connect } from 'react-redux';
 import Paper from 'material-ui/Paper';
 import AppBar from 'material-ui/AppBar';
 
-class Top extends React.Component {
+class AppTop extends React.Component {
 	render() {
 		return (
-			<Paper zDepth={3} className="pageTop">
-				<AppBar title={this.props.title}></AppBar>
+			<Paper zDepth={3} className="AppTop">
+				<AppBar title={this.props.app.page.title}></AppBar>
 			</Paper>
 		)
 	}
@@ -16,7 +16,7 @@ class Top extends React.Component {
 
 const mapStateToProps = (state) => {
 	return {
-		title: 'Dashboard'
+		app: state.app
 	};
 };
-export default connect(mapStateToProps)(Top);
+export default connect(mapStateToProps)(AppTop);

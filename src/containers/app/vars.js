@@ -10,7 +10,7 @@ import FontIcon from 'material-ui/FontIcon';
 	vars.container
 	-
 	the dirname of the current container
-	helps to copy/paste code from one container or component to another, without having to change the name of the component in each spot
+	helps to copy/paste code from one file to another, without having to change the name of the component in each spot
 */
 export const container = 'app';
 /*
@@ -52,8 +52,8 @@ export const initialState = (function(){
 			icon: <FontIcon className="material-icons">note</FontIcon>
 		}]
 	]);
-	// state.pageFunction
-	state.pageFunction = (function(statePages){
+	// state.pageSelect
+	state.pageSelect = (function(statePages){
 		var pageURL = '';
 		const getFirstPath = function(path) {
 			return path.substr(0, path.substr(1).indexOf('/') + 1) || path;
@@ -75,7 +75,7 @@ export const initialState = (function(){
 		};
 	}(state.pages));
 	// state.page
-	state.page = state.pageFunction(window.location.pathname);
+	state.page = state.pageSelect(window.location.pathname);
 	// =>
 	return state;
 }());

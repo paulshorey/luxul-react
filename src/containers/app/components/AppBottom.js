@@ -16,16 +16,6 @@ class AppBottom extends React.Component {
 		const events = actions.events.call({});
 		const handlers = actions.handlers.call({ events, dispatch });
 
-		// functions
-		const urlIndex = function(arr) {
-			var i = arr.length;
-			while(i-- > 0) {
-				if (arr[i].url == window.location.pathname) {
-					return i;
-				}
-			}
-		};
-
 		// elements
 		var BottomNavigationItems = [];
 		(new Map([...(this.props.app.pages).entries()].sort( (a,b) => { return a[1].mainNavPosition > b[1].mainNavPosition } ))).forEach(function(page, url) { // sort by main-nav position
@@ -37,14 +27,14 @@ class AppBottom extends React.Component {
 					key={url}
 					label={page.title}
 					icon={page.icon}
-					onTouchTap={ ()=>{  handlers.pageUrl(url);  } }
+					onTouchTap={ (e)=>{ e.preventDefault(); handlers.pageUrl(url);  } }
 				/>
 			);
 		});
 
 		// container
 		return (
-			<Paper zDepth={3} className="AppBottom">
+			<Paper zDepth={3} id="AppBottom">
 				<BottomNavigation selectedIndex={this.props.app.page.mainNavPosition}>
 					{BottomNavigationItems}
 				</BottomNavigation>

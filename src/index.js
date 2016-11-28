@@ -41,18 +41,24 @@ const history = syncHistoryWithStore(browserHistory, store);
 var injectTapEventPlugin = require("react-tap-event-plugin");
 injectTapEventPlugin();
 
+// app actions
+let dispatch = store.dispatch;
+const actions = require('./containers/app/actions');
+const events = actions.events.call({});
+const handlers = actions.handlers.call({ events, dispatch });
+
 // view
 ReactDOM.render(
   <Provider store={store}>
     <MuiThemeProvider>
       <Router history={history}>
-        <Route path="/" component={Wireless} />
-        <Route path="/wifi" component={Wireless} />
-        <Route path="/test(/:uriText)" component={Test} />
-        <Route path="*" component={Test} />
+        <Route path="/" component={Wireless} handlers={handlers} events={events} />
+        <Route path="/wifi" component={Wireless} handlers={handlers} events={events} />
+        <Route path="/test(/:category)" component={Test} handlers={handlers} events={events} />
+        <Route path="*" component={Test} handlers={handlers} events={events} />
       </Router>
     </MuiThemeProvider>
   </Provider>
   ,
-  document.getElementById('root')
+  document.getElementById('App')
 );

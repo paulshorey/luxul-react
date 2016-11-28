@@ -46,12 +46,16 @@ heading, section, article {
 LAYOUT
 =====
 */
-.AppTop {
+#App {
+	padding:61px 0;
+}
+
+#AppTop {
     position:fixed;
     top:0;
     left:0;
     width:100%;
-    z-index:100;
+    z-index:100000;
     // material-ui overrides 
     button {
         margin-top:4px !important;
@@ -61,11 +65,46 @@ LAYOUT
         line-height:56px !important;
         font-size:1.5rem !important;
     }
+    .drawerTop {
+    	// overflowY: auto;
+    	// overflowX: hidden;
+    	// height:100vh;
+    }
+    .drawerBottom {
+    	position: absolute;
+    	bottom: 0;
+    	width: 100%;
+    	overflow: hidden;
+    	.Card {
+    		background:rgb(0, 188, 212);
+    		padding:0 !important;
+    		> * {
+    			> * {
+		    		padding:0 !important;
+	    		}
+    		}
+    		* {
+    			background:rgb(0, 188, 212);
+    		}
+    	}
+    	* {
+    		color:#fff !important;
+    	}
+    }
 }
-.AppBottom {
+#AppBottom {
     position:fixed;
     bottom:0;
     left:0;
     width:100%;
     z-index:100;
+}
+
+
+/*
+=====
+Material UI
+=====
+*/
+.Drawer {
 }

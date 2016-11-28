@@ -10,6 +10,9 @@ export function handlers(){
 		pageUrl: function(pageUrl) { 
 			browserHistory.push(pageUrl);
 			this.dispatch(this.events.pageUrl(pageUrl));
+		},
+		drawerToggle: function() { 
+			this.dispatch(this.events.drawerToggle());
 		}
 	}
 };
@@ -24,6 +27,11 @@ export function events(){
 			return {
 				type: vars.container + '/PAGE_URL',
 				pageUrl
+			}
+		},
+		drawerToggle: function() { 
+			return {
+				type: vars.container + '/DRAWER_TOGGLE'
 			}
 		}
 	}

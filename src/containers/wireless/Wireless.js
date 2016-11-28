@@ -17,9 +17,9 @@ class Wireless extends React.Component {
         const events = actions.events.call({});
         const handlers = actions.handlers.call({ events, dispatch });
         return (
-            <div className="containerWireless">
+            <div className="container containerWireless">
                 <AppTop />
-                <div className="wirelessSection section2">
+                <div className="section sectionWireless section2">
                     <WirelessRadios
                         radios={radios}
                         events={events}
@@ -31,7 +31,7 @@ class Wireless extends React.Component {
                     />
                 </div>
                 <WirelessProfilesDisplay
-                    className="wirelessSection section1"
+                    className="section sectionWireless section1"
                     profileDeleteConfirm={profileDeleteConfirm}
                     profiles={profiles}
                     events={events}
@@ -43,6 +43,7 @@ class Wireless extends React.Component {
     }
 }
 const mapStateToProps = (state) => {
+    console.log('Wireless.js state', state);
     return {
         radios: state.wireless.radios,
         profiles: state.wireless.profiles,

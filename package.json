@@ -1,5 +1,5 @@
 {
-  "name": "luxul-react-interview",
+  "name": "luxul-react",
   "version": "0.0.1",
   "private": true,
   "devDependencies": {
@@ -64,8 +64,7 @@
     "react-tap-event-plugin": "^2.0.0",
     "redux": "^3.5.2",
     "redux-form": "^6.0.0-rc.5",
-    "redux-form-material-ui": "^4.0.1",
-    "redux-simple-router": "^2.0.4"
+    "redux-form-material-ui": "^4.0.1"
   },
   "scripts": {
     "start": "node ./scripts/start.js",

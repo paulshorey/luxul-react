@@ -20,20 +20,20 @@ class Test extends React.Component {
                 <AppTop handlers={this.props.route.handlers} />
                 <div className="section sectionTest">
                 	<ul>
-				<li><b>location.pathname:</b> {this.props.location.pathname}</li>
-				<li><b>page:</b> {this.props.app.page.title}</li>
-				<li className={this.props.params.category ? '' : 'hidden'}><b>category:</b> {this.props.params.category}</li>
-			</ul>
-			<p>
-				<b>&lt;A /&gt;</b><br />
-				<a href="/test/something-else" onClick={ (e) => { e.preventDefault(); } } onTouchTap={ ()=>{ this.props.route.handlers.pageUrl('/test/something-else'); } }>/test/something-else</a><br />
-				<a href="/some-random-url" onClick={ (e) => { e.preventDefault(); } } onTouchTap={ ()=>{ this.props.route.handlers.pageUrl('/some-random-url'); } }>/some-random-url</a>
-			</p>
-			<p>
-				<b>&lt;Link /&gt;</b><br />
-				<Link to="/test/something-else" onTouchTap={ ()=>{ this.props.route.handlers.pageUrl('/test/something-else'); } }>/test/something-else</Link><br />
-				<Link to="/some-random-url" onTouchTap={ ()=>{ this.props.route.handlers.pageUrl('/some-random-url'); } }>/some-random-url</Link>
-			</p>
+			<li><b>location.pathname:</b> {this.props.location.pathname}</li>
+			<li><b>page:</b> {this.props.app.page.title}</li>
+			<li className={this.props.params.category ? '' : 'hidden'}><b>category:</b> {this.props.params.category}</li>
+		</ul>
+		<p>
+			<b>&lt;A /&gt;</b><br />
+			<a href="/test/something-else" onClick={ (e) => { e.preventDefault(); } } onTouchTap={ ()=>{ this.props.route.handlers.pageUrl('/test/something-else'); } }>/test/something-else</a><br />
+			<a href="/some-random-url" onClick={ (e) => { e.preventDefault(); } } onTouchTap={ ()=>{ this.props.route.handlers.pageUrl('/some-random-url'); } }>/some-random-url</a>
+		</p>
+		<p>
+			<b>&lt;Link /&gt;</b><br />
+			<Link to="/test/something-else" onTouchTap={ ()=>{ this.props.route.handlers.pageUrl('/test/something-else'); } }>/test/something-else</Link><br />
+			<Link to="/some-random-url" onTouchTap={ ()=>{ this.props.route.handlers.pageUrl('/some-random-url'); } }>/some-random-url</Link>
+		</p>
                 </div>
                 <AppBottom handlers={this.props.route.handlers} />
             </div>
@@ -43,7 +43,9 @@ class Test extends React.Component {
 
 // data
 const mapStateToProps = (state) => {
-    console.log('Test.js state', state);
+    if (state.app.debug) {
+        console.log('Test.js state', state);
+    }
     return {
     	app: state.app
     };

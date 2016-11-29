@@ -57,7 +57,7 @@ ReactDOM.render(
     <MuiThemeProvider>
       <Router history={history}>
         <Route path="/" component={Wireless} handlers={handlers} events={events} />
-        <Route path="/stream" component={Stream} handlers={handlers} events={events} />
+        <Route path="/stream(/:category)" component={Stream} handlers={handlers} events={events} />
         <Route path="/test(/:category)" component={Test} handlers={handlers} events={events} />
         <Route path="*" component={Test} handlers={handlers} events={events} />
       </Router>

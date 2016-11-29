@@ -19,7 +19,12 @@ class Stream extends React.Component {
             <div className="container containerStream">
                 <AppTop handlers={this.props.route.handlers} />
                 <div className="section sectionStream">
-                	<p>Some AJAX and Websocket content will go here</p>
+                    <p>Some AJAX and Websocket content will go here</p>
+                    <ul>
+                        <li><b>location.pathname:</b> {this.props.location.pathname}</li>
+                        <li><b>page:</b> {this.props.app.page.title}</li>
+                        <li className={this.props.params.category ? '' : 'hidden'}><b>category:</b> {this.props.params.category}</li>
+                    </ul>
                 </div>
                 <AppBottom handlers={this.props.route.handlers} />
             </div>
@@ -29,7 +34,9 @@ class Stream extends React.Component {
 
 // data
 const mapStateToProps = (state) => {
-    console.log('Stream.js state', state);
+    if (state.app.debug) {
+        console.log('Stream.js state', state);
+    }
     return {
     	app: state.app
     };

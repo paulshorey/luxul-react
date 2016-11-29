@@ -43,7 +43,9 @@ class Wireless extends React.Component {
     }
 }
 const mapStateToProps = (state) => {
-    console.log('Wireless.js state', state);
+    if (state.app.debug) {
+        console.log('Wireless.js state', state);
+    }
     return {
         radios: state.wireless.radios,
         profiles: state.wireless.profiles,

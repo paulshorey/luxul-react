@@ -18,11 +18,12 @@ export const container = 'app';
 	-
 	this is used ONLY initially by the reducer, to generate the state
 	consequently, the generated state is used to generate a new state
-	so, functions inside this object cannot reference the state object, but utilizing a closure, can reference the initial state of this initialState object. lol
+	so, functions inside this object cannot reference the state object, but utilizing a closure, can reference the initial state of this initialState object, which is ok for static data
 */
 export const initialState = (function(){
 	// state
 	let state = {
+		debug: false,
 		drawerOpen: false
 	};
 	// state.pages
@@ -35,7 +36,24 @@ export const initialState = (function(){
 		["/stream", {
 			mainNavPosition: 1,
 			title: "Stream Something",
-			icon: <FontIcon className="material-icons">wifi</FontIcon>
+			icon: <FontIcon className="material-icons">wifi</FontIcon>,
+			options: new Map([
+				["/stream/option1", {
+					navPosition: 0,
+					title: "Watch Stuff",
+					icon: <FontIcon className="material-icons">videocam</FontIcon>
+				}], 
+				["/stream/option2", {
+					navPosition: 1,
+					title: "Some Audio",
+					icon: <FontIcon className="material-icons">wifi</FontIcon>
+				}], 
+				["/stream/option3", {
+					navPosition: 2,
+					title: "Link Three",
+					icon: <FontIcon className="material-icons">speaker_notes</FontIcon>
+				}]
+			])
 		}], 
 		["/", {
 			mainNavPosition: 0,
@@ -45,7 +63,24 @@ export const initialState = (function(){
 		["/test/something", {
 			mainNavPosition: 2,
 			title: "Test",
-			icon: <FontIcon className="material-icons">help</FontIcon>
+			icon: <FontIcon className="material-icons">help</FontIcon>,
+			options: new Map([
+				["/test/option1", {
+					navPosition: 0,
+					title: "Link 1",
+					icon: <FontIcon className="material-icons">videocam</FontIcon>
+				}], 
+				["/test/option2", {
+					navPosition: 1,
+					title: "Link 2",
+					icon: <FontIcon className="material-icons">wifi</FontIcon>
+				}], 
+				["/test/option3", {
+					navPosition: 2,
+					title: "Link 3",
+					icon: <FontIcon className="material-icons">speaker_notes</FontIcon>
+				}]
+			])
 		}],
 		["/404", {
 			title: "Page Not Found",

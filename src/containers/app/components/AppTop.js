@@ -40,8 +40,25 @@ class AppTop extends React.Component {
 		const events = actions.events.call({});
 		const handlers = actions.handlers.call({ events, dispatch });
 
-		// reusable
+		/*
+			the AppBar
+			-
+			re-used inside Drawer - temporary
+		*/
 		const AppTopBar = <AppBar title={this.props.app.page.title} onTouchTap={ ()=>{  handlers.drawerToggle();  } }></AppBar>;
+		/*
+			Drawer options
+			-
+			gotten from main app vars - from the pages[i].options
+		*/
+		var Options = [];
+		if (this.props.app.page.options) {
+			this.props.app.page.options.forEach(function(page, url) {
+				Options.push(
+					<MenuItem key={url} primaryText={page.title} leftIcon={page.icon} onTouchTap={ ()=>{ handlers.pageUrl(url);  } } />
+				);
+			});
+		}
 
 		// view
 		return (
@@ -53,9 +70,7 @@ class AppTop extends React.Component {
 					<div className="drawerTop">
 						<AppBar title={this.props.app.page.title} onTouchTap={ ()=>{  handlers.drawerToggle();  } }></AppBar>
 						<Menu>
-							<MenuItem primaryText="test 1" leftIcon={<FontIcon className="material-icons">wifi</FontIcon>} />
-							<MenuItem primaryText="test 2" leftIcon={<FontIcon className="material-icons">wifi</FontIcon>}/>
-							<MenuItem primaryText="test 3" leftIcon={<FontIcon className="material-icons">wifi</FontIcon>} />
+							{Options}
 						</Menu>
 					</div>
 

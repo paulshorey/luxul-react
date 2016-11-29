@@ -27,7 +27,7 @@ class AppBottom extends React.Component {
 					key={url}
 					label={page.title}
 					icon={page.icon}
-					onTouchTap={ (e)=>{ e.preventDefault(); handlers.pageUrl(url);  } }
+					onTouchTap={ ()=>{ handlers.pageUrl(url);  } }
 				/>
 			);
 		});

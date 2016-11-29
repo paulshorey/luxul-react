@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router';
 
 import AppTop from './../app/components/AppTop';
 import AppBottom from './../app/components/AppBottom';
@@ -24,10 +25,14 @@ class Test extends React.Component {
 				<li className={this.props.params.category ? '' : 'hidden'}><b>category:</b> {this.props.params.category}</li>
 			</ul>
 			<p>
-				<a href="/test/something-else" onClick={ (e) => { e.preventDefault(); } } onTouchTap={ ()=>{ this.props.route.handlers.pageUrl('/test/something-else'); } }>/test/something-else</a>
+				<b>&lt;A /&gt;</b><br />
+				<a href="/test/something-else" onClick={ (e) => { e.preventDefault(); } } onTouchTap={ ()=>{ this.props.route.handlers.pageUrl('/test/something-else'); } }>/test/something-else</a><br />
+				<a href="/some-random-url" onClick={ (e) => { e.preventDefault(); } } onTouchTap={ ()=>{ this.props.route.handlers.pageUrl('/some-random-url'); } }>/some-random-url</a>
 			</p>
 			<p>
-				<a href="/some-random-url" onClick={ (e) => { e.preventDefault(); } } onTouchTap={ ()=>{ this.props.route.handlers.pageUrl('/some-random-url'); } }>/some-random-url</a>
+				<b>&lt;Link /&gt;</b><br />
+				<Link to="/test/something-else" onTouchTap={ ()=>{ this.props.route.handlers.pageUrl('/test/something-else'); } }>/test/something-else</Link><br />
+				<Link to="/some-random-url" onTouchTap={ ()=>{ this.props.route.handlers.pageUrl('/some-random-url'); } }>/some-random-url</Link>
 			</p>
                 </div>
                 <AppBottom handlers={this.props.route.handlers} />

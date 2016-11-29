@@ -26,7 +26,7 @@ export default class ProfileTable extends React.Component {
 
         return (
             <Paper zDepth={4} className="componentWireless componentWireless">
-                <h3>Your WiFi Profiles</h3>
+                <h3 className="form-title">Your WiFi Profiles:</h3>
 
                 <Table selectable={false}>
                     <TableHeader displaySelectAll={false} adjustForCheckbox={false}>

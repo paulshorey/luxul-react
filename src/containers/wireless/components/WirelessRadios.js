@@ -13,12 +13,11 @@ export default class WirelessRadios extends React.Component {
         } = this.props;
 
         return (
-            <Paper zDepth={4} className="componentWireless componentWirelessRadios">
-                <h3>Configure Radios</h3>
+            <div className="componentWireless componentWirelessRadios componentShell">
                 
                 {(radios.all.keys).map((x, i) => { return <WirelessRadio key={i} ghz={x} radios={radios} events={events} handlers={handlers} />; } )}
 
-            </Paper>
+            </div>
         )
     }
 };

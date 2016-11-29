@@ -16,19 +16,19 @@ class WirelessProfilesEdit extends React.Component {
         return (
             <Paper zDepth={4} className="componentWireless componentWirelessProfilesEdit" disabled={ ! this.props.radios.all.enabled}>
                 <form onSubmit={handleSubmit}>
-                    <h3>Add WiFi Profile</h3>
-                    <div>
+                    <h3 className="form-title">Add WiFi Profile:</h3>
+                    <div className="mui-fields">
                         <Field
                             name="radio"
                             component={SelectField}
-                            floatingLabelText="Band"
+                            floatingLabelText="Band:"
                             fullWidth
                         >
                             <MenuItem value="2.4GHz" primaryText="2.4GHz" disabled={ ! this.props.radios["2.4GHz"].enabled} />
                             <MenuItem value="5GHz" primaryText="5GHz" disabled={ ! this.props.radios["5GHz"].enabled} />
                         </Field>
                     </div>
-                    <div>
+                    <div className="mui-fields">
                         <Field
                             name="ssid"
                             component={TextField}
@@ -46,11 +46,11 @@ class WirelessProfilesEdit extends React.Component {
                             label="Client Isolation"
                         />
                     </div>
-                    <div>
+                    <div className="mui-fields">
                         <Field
                             name="security"
                             component={SelectField}
-                            floatingLabelText="Security"
+                            floatingLabelText="Security:"
                             fullWidth
                         >
                             <MenuItem value="none" primaryText="None" />
@@ -59,7 +59,7 @@ class WirelessProfilesEdit extends React.Component {
                             <MenuItem value="vpa+wpa2" primaryText="WAP/WPA2 Mixed" />
                         </Field>
                     </div>
-                    <div>
+                    <div className="mui-buttons">
                         <RaisedButton
                             className="mui-RaisedButton"
                             label="Add"

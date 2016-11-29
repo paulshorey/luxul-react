@@ -10,7 +10,7 @@ export function handlers(){
 			this.dispatch(this.events.setRadioEnabled(radio, options))
 		},
 		radioChannel: function(radio, options) { 
-			this.dispatch(this.events.setRadioChannel(radio, options)) 
+			this.dispatch(this.events.setRadioChannel(radio, options))
 		},
 		radioWidth: function(radio, options) { 
 			this.dispatch(this.events.setRadioWidth(radio, options)) 

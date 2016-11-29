@@ -22,12 +22,16 @@ import wirelessReducer from './containers/wireless/reducer';
 // test
 import Test from './containers/test/Test';
 import testReducer from './containers/test/reducer';
+// stream
+import Stream from './containers/stream/Stream';
+import streamReducer from './containers/stream/reducer';
 
 // data
 const middleware = routerMiddleware(browserHistory);
 let store = createStore(
     combineReducers({
         test: testReducer,
+        stream: streamReducer,
         wireless: wirelessReducer,
         form: formReducer,
         routing: routerReducer,
@@ -53,7 +57,7 @@ ReactDOM.render(
     <MuiThemeProvider>
       <Router history={history}>
         <Route path="/" component={Wireless} handlers={handlers} events={events} />
-        <Route path="/wifi" component={Wireless} handlers={handlers} events={events} />
+        <Route path="/stream" component={Stream} handlers={handlers} events={events} />
         <Route path="/test(/:category)" component={Test} handlers={handlers} events={events} />
         <Route path="*" component={Test} handlers={handlers} events={events} />
       </Router>

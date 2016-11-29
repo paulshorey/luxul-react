@@ -32,9 +32,9 @@ export const initialState = (function(){
 			title: "First Page On Secondary NavBar",
 			icon: <FontIcon className="material-icons">more</FontIcon>
 		}], 
-		["/wifi", {
+		["/stream", {
 			mainNavPosition: 1,
-			title: "Configure Your WiFi",
+			title: "Stream Something",
 			icon: <FontIcon className="material-icons">wifi</FontIcon>
 		}], 
 		["/", {
